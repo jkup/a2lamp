@@ -38,8 +38,11 @@
 |
 */
 
-$route['default_controller'] = "lamp";
+$route['default_controller'] = 'lamp';
 $route['404_override'] = '';
+
+$route['topics']       = 'topics/show_all';
+$route['topic/(:any)'] = 'topics/show/$1';
 
 
 /* End of file routes.php */
