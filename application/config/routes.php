@@ -42,6 +42,7 @@ $route['default_controller'] = 'lamp';
 $route['404_override'] = '';
 
 $route['topics']       = 'topics/show_all';
+$route['topic/create'] = 'topics/create';
 $route['topic/(:any)'] = 'topics/show/$1';
 
 

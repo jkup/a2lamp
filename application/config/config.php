@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost:8888/a2lamp/';
+$config['base_url'] = '';
 
 /*
 |--------------------------------------------------------------------------

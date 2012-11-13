@@ -2,13 +2,6 @@
 
 class Topic_model extends CI_Model {
     
-    public function __construct()
-    {
-        parent::__construct();        
-        
-        $this->load->database();
-    }
-    
     public function get_topics()
     {
         $topics = array();
@@ -22,5 +15,18 @@ class Topic_model extends CI_Model {
         return $topics;
     }
     
-}
+    public function get_topic( $topic_id )
+    {
+        $query = $this->db->get_where('topics', array( 'id' => $topic_id ), 1);
+
+        return $query->row(); 
+    }
     
+    public function create_topic( $new_topic )
+    {        
+        $this->db->insert('topics', $new_topic);
+        
+        return $this->db->insert_id();
+    }
+    
+}
