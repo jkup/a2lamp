@@ -48,9 +48,9 @@
 $active_group = 'local';
 $active_record = TRUE;
 
-$db['local']['hostname'] = '127.0.0.1';
+$db['local']['hostname'] = 'localhost';
 $db['local']['username'] = 'root';
-$db['local']['password'] = 'waste';
+$db['local']['password'] = 'root';
 $db['local']['database'] = 'a2lamp';
 $db['local']['dbdriver'] = 'mysql';
 $db['local']['dbprefix'] = '';
