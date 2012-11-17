@@ -4,6 +4,6 @@ class Lamp extends CI_Controller {
 
 	function index()
 	{
-		$this->load->view('message');
+		$this->load->view('home');
 	}
 }
