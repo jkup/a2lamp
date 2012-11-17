@@ -4,7 +4,9 @@ class Blog_model extends CI_Model {
 
 	function get_posts()
 	{
-        $query = $this->db->get('blog');
+		$this->db->from('blog');
+		$this->db->order_by("id", "desc");
+        $query = $this->db->get();
 		return $query;
 	}
 
