@@ -2,8 +2,8 @@
 <div class="row">
 	<div class="six columns centered">   
 <?php
-	echo anchor('topics/show_all', 'Presentation Topics', 'class="button"');
-	echo anchor('blog/index', 'Minutes From Past Meetups', 'class="button"');
+	echo anchor('topics/', 'Presentation Topics', 'class="button"');
+	echo anchor('blog/', 'Minutes From Past Meetups', 'class="button"');
 ?>
 	</div>
 </div>

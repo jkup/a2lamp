@@ -1,5 +1,10 @@
 <? $this->load->view('global/header_view'); ?>
 <div class="row">
+	<div class="six columns centered">
+		<?php echo anchor("blog/create", "Create Post", 'class="button"'); ?>
+	</div>
+</div>
+<div class="row">
 	<div class="six columns centered"> 
 		<?php
 			foreach($posts as $post)
@@ -16,5 +21,4 @@
 	</div>
 </div>
 	<br />
-	<?php echo anchor("blog/create", "Create Post"); ?>
 <? $this->load->view('global/footer_view'); ?>

@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="six columns centered"> 
                      <li>
-                        <h2><?= $topic->title ?></h2>
+                        <h3><?= $topic->title ?></h3>
                         <p><?= $topic->description ?></p>
                     </li>
                   </div>
