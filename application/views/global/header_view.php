@@ -10,6 +10,15 @@
     <body>
         <header>
             <h1>a2lamp</h1>
+            
+            <nav id="user">
+                <? if ( !empty($user) ) : ?>
+                    Hi, <?= $user->name ?><br>
+                    <?= anchor('/logout', 'Log out') ?>
+                <? else : ?>
+                    <?= anchor('/login', 'Log in') ?>
+                <? endif; ?>
+            </nav>
         </header>
 
         <div id="content">

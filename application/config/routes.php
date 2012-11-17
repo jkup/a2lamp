@@ -44,6 +44,8 @@ $route['404_override'] = '';
 $route['topics']       = 'topics/show_all';
 $route['topic/create'] = 'topics/create';
 $route['topic/(:any)'] = 'topics/show/$1';
+$route['login']        = 'user/login';
+$route['logout']       = 'user/logout';
 
 
 /* End of file routes.php */
