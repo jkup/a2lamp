@@ -2,8 +2,13 @@
 
 class Lamp extends CI_Controller {
 
-	function index()
-	{
-		$this->load->view('home');
-	}
+    function index()
+    {
+        $data = array( 
+            'user' => $this->session->userdata('user')
+        );
+
+        $this->load->view('home', $data);
+    }
+    
 }

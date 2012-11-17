@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>
-            <?= ( isset($page['title']) ) ? $page['title'] . ' - ' : '' ?>a2lamp
+            <?= ( isset($page['title']) ) ? $page['title'] . ' - ' : '' ?>A2Lamp
         </title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="<?php echo base_url();?>css/foundation.css" rel="stylesheet" type="text/css">
@@ -11,7 +11,16 @@
         <header>
             <div class="row">
                 <div class="six columns centered">
-                    <h1>A2Lamp</h1>
+                    <h1><?= ( isset($page['title']) ) ? $page['title'] : 'A2Lamp' ?></h1>
+                    
+                    <nav id="user">
+                        <? if ( !empty($user) ) : ?>
+                            Hi, <?= $user->name ?><br>
+                            <?= anchor('/logout', 'Log out') ?>
+                        <? else : ?>
+                            <?= anchor('/login', 'Log in') ?>
+                        <? endif; ?>
+                    </nav>
                 </div>
             </div>
         </header>
