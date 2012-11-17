@@ -9,7 +9,11 @@
     </head>
     <body>
         <header>
-            <h1>a2lamp</h1>
+            <div class="row">
+                <div class="six columns centered">
+                    <h1>A2Lamp</h1>
+                </div>
+            </div>
         </header>
 
         <div id="content">
