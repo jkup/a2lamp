@@ -1214,4 +1214,4 @@ table.show-for-xlarge, table.show-for-large, table.hide-for-small, table.hide-fo
   .top-bar ul li .button.small { margin: 0 !important; display: inline-block; width: 100%; }
   .top-bar ul > li.has-button a.button { margin: 0; } }
 
-  /*nav#user { display: none; }*/
+  nav#user { display: none; }
