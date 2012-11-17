@@ -2,16 +2,8 @@
 
 class Lamp extends CI_Controller {
 
-    function index()
-    {
-        $page = array( 'title' => 'Current Topics' );
-
-        $data = array( 
-            'page' => $page,
-            'user' => $this->session->userdata('user')
-        );
-        
-        $this->load->view('home_view', $data);
-    }
-    
+	function index()
+	{
+		$this->load->view('home');
+	}
 }

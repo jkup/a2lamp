@@ -4,10 +4,14 @@
     <? if ( !empty($topics) ) : ?>
         <ul>
             <? foreach ( $topics as $topic ) : ?>
-                 <li>
-                    <h2><?= $topic->title ?></h2>
-                    <p><?= $topic->description ?></p>
-                </li>
+                <div class="row">
+                    <div class="six columns centered"> 
+                     <li>
+                        <h3><?= $topic->title ?></h3>
+                        <p><?= $topic->description ?></p>
+                    </li>
+                  </div>
+                </div>
             <? endforeach; ?>
         </ul>
     <? endif; ?>
