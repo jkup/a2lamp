@@ -9,21 +9,48 @@
         <link href="<?php echo base_url();?>css/styles.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <header>
-            <div class="row">
-                <div class="six columns centered">
-                    <h1><?= ( isset($page['title']) ) ? $page['title'] : 'A2Lamp' ?></h1>
-                    
-                    <nav id="user">
-                        <? if ( !empty($user) ) : ?>
-                            Hi, <?= $user->name ?><br>
-                            <?= anchor('/logout', 'Log out') ?>
-                        <? else : ?>
-                            <?= anchor('/login', 'Log in') ?>
-                        <? endif; ?>
-                    </nav>
-                </div>
-            </div>
-        </header>
+        <div class="row">
+            <div class="twelve columns">
+                <nav class="top-bar">
+                    <ul>
+                        <li class="name">
+                            <h1><a href="/">A2Lamp</a></h1>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="toggle-topbar"><a href="#"></a></li>
+                    </ul>
 
-        <div id="content">
+                <section>
+                    <ul class="left">
+                        <li class="has-dropdown">
+                            <?= anchor('topics/', 'Presentation Topics', 'class="active"') ?>
+                            <ul class="dropdown">
+                                <li>
+                                    <?= anchor('topics', 'View topics'); ?>
+                                </li>
+                                <li>
+                                    <?= anchor('topics/create', 'Create a new topic'); ?>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><?= anchor('blog/', 'Minutes From Past Meetups') ?></li>
+                    </ul>
+
+                    <ul class="right">
+                        <li class="divider show-for-medium-and-up"></li>
+
+                    <? if ( empty($user) ) : ?>
+                        <li><?= anchor('/login', 'Log in') ?></li>
+                    <? else : ?>
+                        <li class="has-dropdown">
+                            <a class="active" href="#"><?= $user->name ?></a>
+                            <ul class="dropdown">
+                                <li><?= anchor('/logout', 'Log out') ?></li>
+                            </ul>
+                        </li>
+                    <? endif; ?>
+                    </ul>
+
+                  </section>
+            </div>
+        </div>

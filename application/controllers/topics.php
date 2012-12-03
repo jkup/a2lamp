@@ -21,9 +21,12 @@ class Topics extends CI_Controller {
     public function create()
     {   
         $page = array( 'title' => 'Create A New Topic' );
+        
+        $user = $this->session->userdata('user');
 
         $data = array( 
-            'page' => $page
+            'page' => $page,
+            'user' => $user
         );
         
         $this->load->library('form_validation');
@@ -35,14 +38,15 @@ class Topics extends CI_Controller {
             $this->load->view('topics/create_view', $data);
         } else {            
             $this->load->model('topic_model');
-            
+
             $new_topic = array(
                 'title'       => $this->input->post('title'),
-                'description' => $this->input->post('description')
+                'description' => $this->input->post('description'),
+                'user_id'     => $this->input->post('user_id')
             );
 
             $topic_id = $this->topic_model->create_topic( $new_topic );
-            
+
             redirect('topic/' . $topic_id);
         }
     }

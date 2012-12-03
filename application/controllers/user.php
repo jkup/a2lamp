@@ -86,7 +86,7 @@ class User extends CI_Controller {
                 }
             }
         } else {
-            die(urldecode($this->input->get('error_description')));
+            $this->load->view('user/login_error');
         }
     }
     

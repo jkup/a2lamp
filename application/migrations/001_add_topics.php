@@ -18,10 +18,19 @@ class Migration_Add_topics extends CI_Migration {
             'description' => array(
                 'type'           => 'VARCHAR',
                 'constraint'     => 1000
+            ),
+            'created' => array(
+                'type'           => 'TIMESTAMP DEFAULT CURRENT_TIMESTAMP'
+            ),
+            'user_id' => array(
+                'type'           => 'INT',
+                'constraint'     => 20,
+                'unsigned'       => TRUE
             )
         ));
-        
+
         $this->dbforge->add_key('id', TRUE);
+        $this->dbforge->add_key('created');
 
         $this->dbforge->create_table('topics');
     }
