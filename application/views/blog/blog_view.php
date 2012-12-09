@@ -9,13 +9,14 @@
 		<?php
 			foreach($posts as $post)
 			{
+				$date = new DateTime($post->timestamp);
 				echo "<h1>".$post->title."</h1>";
 				echo "<br />";
 				echo $post->content;
 				echo "<br />";
 				echo $post->author;
 				echo "<br />";
-				echo $post->timestamp;
+				echo $date;
 			}
 		?>
 	</div>
