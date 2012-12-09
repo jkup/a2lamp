@@ -1,11 +1,11 @@
 <? $this->load->view('global/header_view'); ?>
 <div class="row">
-	<div class="six columns centered">
+	<div class="twelve columns centered">
 		<?php echo anchor("blog/create", "Create Post", 'class="button"'); ?>
 	</div>
 </div>
 <div class="row">
-	<div class="six columns centered"> 
+	<div class="twelve columns centered"> 
 		<?php
 			$this->load->helper('form');
 			echo form_open('blog/insert');
