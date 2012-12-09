@@ -2,7 +2,7 @@
 
 <div class="row">        
     <? if ( $user ) : ?>
-        <div class="six columns centered">
+        <div class="eight columns">
             <form action="/topic/create" method="post">
                 <input type="hidden" name="user_id" value="<?= $user->id ?>">
                 
@@ -28,6 +28,8 @@
                 </p>
             </form>
         </div>
+    
+        <div class="four columns"></div>
     <? else : ?>
         <div class="twelve columns centered">
             <h2>Access denied</h2>
