@@ -13,9 +13,9 @@ class User_model extends CI_Model {
         
         $this->db->insert('users', $new_user);
         
-        $query = $this->get_user( $user->id );
+        $user = $this->get_user( $user->id );
         
-        return $query->row(); 
+        return $user; 
     }
     
     public function get_user( $user_id )
