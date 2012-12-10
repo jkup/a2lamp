@@ -16,7 +16,7 @@
 				echo "<br />";
 				echo $post->author;
 				echo "<br />";
-				echo $date;
+				echo $date->format('F d, Y');
 			}
 		?>
 	</div>
