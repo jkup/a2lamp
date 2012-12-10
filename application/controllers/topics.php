@@ -2,17 +2,20 @@
 
 class Topics extends CI_Controller {
 
-    public function show_all()
+    public function index()
     {
         $this->load->model('topic_model');
 
         $topics = $this->topic_model->get_topics();
         
         $page = array( 'title' => 'Current Topics' );
+        
+        $user = $this->session->userdata('user');
 
         $data = array( 
             'page'   => $page,
-            'topics' => $topics 
+            'topics' => $topics,
+            'user'   => $user
         );
 
         $this->load->view('topics/all_view', $data);
@@ -58,13 +61,30 @@ class Topics extends CI_Controller {
         $topic = $this->topic_model->get_topic( $topic_id );
         
         $page = array( 'title' => 'Current Topics' );
+        
+        $user = $this->session->userdata('user');
 
         $data = array( 
             'page'  => $page,
-            'topic' => $topic
+            'topic' => $topic,
+            'user'  => $user
         );
 
         $this->load->view('topics/show_view', $data);        
+    }
+    
+    public function add_vote( $topic_id )
+    {
+        $this->load->model('topic_model');
+        
+        $this->topic_model->add_vote($topic_id);
+    }
+    
+    public function remove_vote( $topic_id )
+    {
+        $this->load->model('topic_model');
+        
+        $this->topic_model->remove_vote($topic_id);
     }
 
 }

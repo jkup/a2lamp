@@ -41,11 +41,12 @@
 $route['default_controller'] = 'lamp';
 $route['404_override'] = '';
 
-$route['topics']       = 'topics/show_all';
-$route['topic/create'] = 'topics/create';
-$route['topic/(:any)'] = 'topics/show/$1';
-$route['login']        = 'user/login';
-$route['logout']       = 'user/logout';
+$route['topic/create']             = 'topics/create';
+$route['topic/(:any)/add-vote']    = 'topics/add_vote/$1';
+$route['topic/(:any)/remove-vote'] = 'topics/remove_vote/$1';
+$route['topic/(:any)']             = 'topics/show/$1';
+$route['login']                    = 'user/login';
+$route['logout']                   = 'user/logout';
 
 
 /* End of file routes.php */
