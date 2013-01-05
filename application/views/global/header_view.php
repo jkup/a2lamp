@@ -6,6 +6,7 @@
         </title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="<?php echo base_url();?>css/foundation.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo base_url();?>css/jquery.qtip.min.css" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url();?>css/styles.css" rel="stylesheet" type="text/css">
     </head>
     <body>
@@ -40,7 +41,7 @@
                         <li class="divider show-for-medium-and-up"></li>
 
                     <? if ( empty($user) ) : ?>
-                        <li><?= anchor('/login', 'Log in') ?></li>
+                        <li><?= anchor('/login', 'Log in', array( 'class' => 'login' )) ?></li>
                     <? else : ?>
                         <li class="has-dropdown">
                             <a class="active" href="#"><?= $user->name ?></a>

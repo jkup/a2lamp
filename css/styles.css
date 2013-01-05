@@ -11,9 +11,17 @@
     font-size: 1.5em;
 }
 
-.icon.up-arrow {
+.topic .add-vote,
+.topic .remove-vote,
+.topic .log-in-popup {
     display: block;
     float: left;
+    width: 24px;
+    height: 24px;
+}
+
+.icon.up-arrow {
+    display: inline-block;
     width: 24px;
     height: 24px;
     background: url("/images/up-arrow-sprite.png") no-repeat 0 -48px;

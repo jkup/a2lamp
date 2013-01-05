@@ -20,7 +20,7 @@
                             <span class="icon up-arrow"></span>
                         </a>
                     <? else : ?>
-                        <a href="#" class="log-in-popup">
+                        <a href="#" class="log-in-popup" title="Log in to vote up topics">
                             <span class="icon up-arrow"></span>
                         </a>
                     <? endif; ?>

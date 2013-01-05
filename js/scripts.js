@@ -19,4 +19,20 @@ $(function() {
         $.post(url);
     });
     
+    // log-in prompt popup
+    $('.log-in-popup').click(function(e) { 
+        e.preventDefault();
+    }).qtip({
+        show: {
+            event: 'click'
+        },
+        position: {
+            my: 'top left',
+            at: 'bottom center'
+        },
+	style: {
+            classes: 'qtip-youtube'
+        }
+    });
+    
 });
