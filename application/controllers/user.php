@@ -7,6 +7,9 @@ class User extends CI_Controller {
 
     public function login()
     {
+        // cache the referring page to redirect the user to after login
+        $this->_cache_referer();
+        
         $redirect_uri = urlencode(site_url('/login'));
         
         if ( $this->input->get('error') === false ) {
@@ -76,7 +79,14 @@ class User extends CI_Controller {
 
                             if ( !empty($user) ) {
                                 $this->session->set_userdata('user', $user);
-                                redirect('/');
+                                
+                                $referer = $this->_get_cached_referer();
+                                
+                                if ( $referer ) {
+                                    redirect($referer);
+                                } else {
+                                    redirect('/');
+                                }
                             } else {
                                 show_error('Unable to create user account. Sorry about that. :o/');
                             }
@@ -93,7 +103,36 @@ class User extends CI_Controller {
     public function logout()
     {
         $this->session->unset_userdata('user');
-        redirect('/');
+        
+        // get the referring page to redirect the user to after login
+        $referer = ( !empty($_SERVER['HTTP_REFERER']) ) ? $_SERVER['HTTP_REFERER'] : null;
+        
+        if ( $referer ) {
+            redirect($referer);
+        } else {
+            redirect('/');
+        }
+    }
+    
+    /**
+     * Cache valid referer in browser session for later user.
+     */
+    private function _cache_referer()
+    {
+        $referer = ( !empty($_SERVER['HTTP_REFERER']) ) ? $_SERVER['HTTP_REFERER'] : null;
+
+        if ( strpos($referer, 'login') === false ) {
+            $this->session->set_userdata('cached_referer', $referer);
+        }
+    }
+    
+    /**
+     * Retrieve cached referer
+     * @return boolean|string Cached referer URI, or FALSE if not found.
+     */
+    private function _get_cached_referer()
+    {
+        return $this->session->userdata('cached_referer');
     }
     
 }
