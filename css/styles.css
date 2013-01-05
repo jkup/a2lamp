@@ -1,5 +1,26 @@
-.topic h3, 
-.topic h5 {
-    margin: 0;
+.topic {
+    margin-bottom: 0.4em;
+    /*border-bottom: 1px solid #eee;*/
+}
+
+.topic h3 {
+    margin: 0 0 0 24px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
     font-weight: normal;
+    font-size: 1.5em;
+}
+
+.icon.up-arrow {
+    display: block;
+    float: left;
+    width: 24px;
+    height: 24px;
+    background: url("/images/up-arrow-sprite.png") no-repeat 0 -48px;
+}
+.add-vote .icon.up-arrow {
+    background-position: 0 0;
+}
+.remove-vote .icon.up-arrow {
+    background-position: 0 -24px;
 }

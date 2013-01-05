@@ -1,28 +1,34 @@
 <? $this->load->view('global/header_view'); ?>
 
 <? if ( !empty($topics) ) : ?>
+    <div class="row">
+        <div class="twelve columns">
+            <h2>Current Topics</h2>
+        </div>
+    </div>
+
     <? foreach ( $topics as $topic ) : ?>
         <div class="row">
-            <div class="ten columns">
-                <h3><?= anchor('topic/' . $topic->id, $topic->title) ?></h3>
-            </div>
+            <div class="twelve columns">
+                <div class="topic">
+                    <? if ( isset($topic->user_voted) && $topic->user_voted === true ) : ?>
+                        <a href="#" class="remove-vote" data-topicid="<?= $topic->id ?>">
+                            <span class="icon up-arrow"></span>
+                        </a>
+                    <? elseif ( $user ) : ?>
+                        <a href="#" class="add-vote" data-topicid="<?= $topic->id ?>">
+                            <span class="icon up-arrow"></span>
+                        </a>
+                    <? else : ?>
+                        <a href="#" class="log-in-popup">
+                            <span class="icon up-arrow"></span>
+                        </a>
+                    <? endif; ?>
 
-            <div class="two columns">
-                <? if ( isset($topic->user_voted) && $topic->user_voted === true ) : ?>
-                    <a href="#" class="button small radius right vote success" data-topicid="<?= $topic->id ?>">voted!</a>
-                <? elseif ( $user ) : ?>
-                    <a href="#" class="button small radius right vote" data-topicid="<?= $topic->id ?>">vote for topic</a>
-                <? else : ?>
-                    <?= anchor('login', 'log-in to vote', array( 'class' => 'button small radius right secondary' ) ) ?>
-                <? endif; ?>
+                    <h3><?= anchor('topic/' . $topic->id, $topic->title) ?></h3>                    
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="twelve columns">
-                <h5 class="subheader"><?= $topic->description ?></h5>
-                <hr>
-            </div>
-        <div class="row">
     <? endforeach; ?>
 <? else : ?>
     <div class="row">

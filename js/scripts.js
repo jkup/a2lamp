@@ -1,20 +1,18 @@
 $(function() {
     
     // AJAX vote button action/update
-    $('.button.vote').click(function(e) {
+    $('.topic .add-vote, .topic .remove-vote').click(function(e) {
         e.preventDefault();
 
         var $this   = $(this);
         var topicId = $this.data('topicid');
         var url     = '/topic/' + topicId;
 
-        $this.toggleClass('success');
-
-        if ( $this.hasClass('success') ) {
-            $this.text('voted!');
+        if ( $this.hasClass('add-vote') ) {
             url += '/add-vote';
+            $this.removeClass('add-vote').addClass('remove-vote');
         } else {
-            $this.text('vote for topic');
+            $this.removeClass('remove-vote').addClass('add-vote');
             url += '/remove-vote';
         }
 
