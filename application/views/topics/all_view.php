@@ -24,8 +24,23 @@
                             <span class="icon up-arrow"></span>
                         </a>
                     <? endif; ?>
-
-                    <h3><?= anchor('topic/' . $topic->id, $topic->title) ?></h3>                    
+                    
+                    <div class="topic-info">
+                        <h3><?= anchor('topic/' . $topic->id, $topic->title) ?></h3>                    
+                    
+                        <ul class="inline-list topic-meta">
+                            <li>
+                                <!--<div class="author-photo" style="background-image:url(<?= $topic->author_photo ?>)"></div>-->
+                                <?= anchor($topic->author_link, $topic->author_name, array( 'class' => 'author-name' )) ?>
+                            </li>
+                            <li><?= date('M. j, Y', strtotime($topic->created)) ?></li>
+                            <li><?= $topic->votes ?> votes</li>
+                        </ul>
+                        
+                        <p class="description">
+                            <?= $topic->description ?>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

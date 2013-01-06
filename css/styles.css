@@ -1,25 +1,4 @@
-.topic {
-    margin-bottom: 0.4em;
-    /*border-bottom: 1px solid #eee;*/
-}
-
-.topic h3 {
-    margin: 0 0 0 24px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #eee;
-    font-weight: normal;
-    font-size: 1.5em;
-}
-
-.topic .add-vote,
-.topic .remove-vote,
-.topic .log-in-popup {
-    display: block;
-    float: left;
-    width: 24px;
-    height: 24px;
-}
-
+/* Topic voting arrow CSS */
 .icon.up-arrow {
     display: inline-block;
     width: 24px;
@@ -31,4 +10,56 @@
 }
 .remove-vote .icon.up-arrow {
     background-position: 0 -24px;
+}
+
+/* Topics CSS */
+.topic {
+    margin-bottom: 10px;
+}
+
+.topic .add-vote,
+.topic .remove-vote,
+.topic .log-in-popup {
+    display: block;
+    float: left;
+    width: 24px;
+    height: 24px;
+}
+
+.topic-info {
+    margin-left: 24px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.topic-info h3 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 1.5em;
+}
+
+.topic-info .topic-meta {
+    margin: 0 0 0 -18px;
+}
+
+.topic-info .topic-meta li {
+    font-size: 0.9em;
+}
+
+.topic-info .topic-meta .author-photo {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-position: center center;
+    background-size: 20px auto;
+    border-radius: 4px;
+}
+.topic-info .topic-meta .author-name {
+    display: inline;
+}
+
+.topic-info .description {
+    padding: 2px 4px;
+    margin: 0;
+    color: #444;
 }

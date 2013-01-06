@@ -10,7 +10,8 @@ class Topic_model extends CI_Model {
         
         $user_id = ( $user ) ? $user->id : '0';
 
-        $this->db->select('topics.*, user_vote.user_id AS `user_voted`, COUNT(vote_count.user_id) AS `votes`');
+        $this->db->select('topics.*, users.name AS `author_name`, users.photo AS `author_photo`, users.link AS `author_link`, user_vote.user_id AS `user_voted`, COUNT(vote_count.user_id) AS `votes`');
+        $this->db->join('users', 'topics.user_id = users.id');
         $this->db->join('votes AS vote_count', 'topics.id = vote_count.topic_id', 'left');
         $this->db->join('votes AS user_vote', 'topics.id = user_vote.topic_id AND user_vote.user_id = ' . $user_id, 'left');
         $this->db->group_by('topics.id');

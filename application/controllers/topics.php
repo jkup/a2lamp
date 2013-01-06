@@ -50,7 +50,7 @@ class Topics extends CI_Controller {
 
             $topic_id = $this->topic_model->create_topic( $new_topic );
 
-            redirect('topic/' . $topic_id);
+            redirect('topics');
         }
     }
     
