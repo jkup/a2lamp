@@ -21,37 +21,36 @@
                         <li class="toggle-topbar"><a href="#"></a></li>
                     </ul>
 
-                <section>
-                    <ul class="left">
-                        <li class="has-dropdown">
-                            <?= anchor('topics/', 'Presentation Topics', 'class="active"') ?>
-                            <ul class="dropdown">
-                                <li>
-                                    <?= anchor('topics', 'View topics'); ?>
-                                </li>
-                                <li>
-                                    <?= anchor('topics/create', 'Create a new topic'); ?>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><?= anchor('blog/', 'Minutes From Past Meetups') ?></li>
-                    </ul>
+                    <section>
+                        <ul class="left">
+                            <li><?= anchor('topics/', 'Current Topics') ?></li>
+                            <li><?= anchor('blog/', 'Minutes From Past Meetups') ?></li>
+                            <li class="has-dropdown">
+                                <?= anchor('https://github.com/m1ck3y/a2lamp', 'GitHub') ?>
+                                <ul class="dropdown">
+                                    <li><?= anchor('https://github.com/m1ck3y/a2lamp', 'Repo for this site'); ?></li>
+                                    <li><?= anchor('https://github.com/m1ck3y/a2lamp/issues', 'Report a bug / Request a feature'); ?></li>
+                                </ul>
+                            </li>
+                        </ul>
 
-                    <ul class="right">
-                        <li class="divider show-for-medium-and-up"></li>
+                        <ul class="right">
+                            <li class="divider show-for-medium-and-up"></li>
 
-                    <? if ( empty($user) ) : ?>
-                        <li><?= anchor('/login', 'Log in', array( 'class' => 'login' )) ?></li>
-                    <? else : ?>
-                        <li class="has-dropdown">
-                            <a class="active" href="#"><?= $user->name ?></a>
-                            <ul class="dropdown">
-                                <li><?= anchor('/logout', 'Log out') ?></li>
-                            </ul>
-                        </li>
-                    <? endif; ?>
-                    </ul>
+                        <? if ( empty($user) ) : ?>
+                            <li><?= anchor('/login', 'Log in', array( 'class' => 'login' )) ?></li>
+                        <? else : ?>
+                            <li class="has-dropdown">
+                                <a class="active" href="#"><?= $user->name ?></a>
+                                <ul class="dropdown">
+                                    <li><?= anchor('topics/create', 'Submit a topic'); ?></li>
+                                    <li><?= anchor('/logout', 'Log out') ?></li>
+                                </ul>
+                            </li>
+                        <? endif; ?>
+                        </ul>
 
-                  </section>
+                    </section>
+                </nav>
             </div>
         </div>

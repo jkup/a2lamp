@@ -58,7 +58,7 @@ class Topic_model extends CI_Model {
         $user = $this->session->userdata('user');
 
         if ( $user ) {
-            $query = $this->db->insert('votes', array(
+            $this->db->insert('votes', array(
                 'topic_id' => $topic_id,
                 'user_id'  => $user->id
             ));

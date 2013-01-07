@@ -2,8 +2,12 @@
 
 <? if ( !empty($topics) ) : ?>
     <div class="row">
-        <div class="twelve columns">
+        <div class="ten columns">
             <h2>Current Topics</h2>
+        </div>
+        
+        <div class="two columns">
+            <?= anchor('topics/create', 'Submit a topic', array( 'class' => 'small button' )) ?>
         </div>
     </div>
 

@@ -20,8 +20,8 @@ class Migration_Add_votes extends CI_Migration {
             )
         ));
         
-        $this->dbforge->add_key('topic_id', TRUE);
-        $this->dbforge->add_key(array( 'topic_id', 'user_id' ));
+        $this->dbforge->add_key('topic_id');
+        $this->dbforge->add_key(array( 'topic_id', 'user_id' ), TRUE);
 
         $this->dbforge->create_table('votes');
     }

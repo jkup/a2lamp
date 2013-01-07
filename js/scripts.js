@@ -19,6 +19,13 @@ $(function() {
         $.post(url);
     });
     
+    // show/hide topic description on hover
+    $('.topic').hover(function() {
+        $('.description', this).slideDown(200);
+    },function() {
+        $('.description', this).slideUp(200);        
+    });
+    
     // log-in prompt popup
     $('.log-in-popup').click(function(e) { 
         e.preventDefault();

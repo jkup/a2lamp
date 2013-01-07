@@ -14,7 +14,8 @@
 
 /* Topics CSS */
 .topic {
-    margin-bottom: 10px;
+    cursor: pointer;
+    padding-top: 10px;
 }
 
 .topic .add-vote,
@@ -59,6 +60,7 @@
 }
 
 .topic-info .description {
+    display: none;
     padding: 2px 4px;
     margin: 0;
     color: #444;
