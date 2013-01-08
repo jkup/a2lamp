@@ -11,7 +11,7 @@
         <div class="twelve columns">
             <ul class="inline-list topic-meta">
                 <li>
-                    <!--<div class="author-photo" style="background-image:url(<?= $topic->author_photo ?>)"></div>-->
+                    <div class="author-photo" style="background-image:url(<?= $topic->author_photo ?>)"></div>
                     <?= anchor($topic->author_link, $topic->author_name, array( 'class' => 'author-name' )) ?>
                 </li>
                 <li><?= date('M. j, Y', strtotime($topic->created)) ?></li>

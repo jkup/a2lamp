@@ -39,23 +39,25 @@
     font-size: 1.5em;
 }
 
-.topic-info .topic-meta {
-    margin: 0 0 0 -18px;
+ul.topic-meta {
+    margin: 5px 0 0 -18px;
 }
 
-.topic-info .topic-meta li {
+ul.topic-meta li {
     font-size: 0.9em;
 }
 
-.topic-info .topic-meta .author-photo {
+ul.topic-meta .author-photo {
     display: inline-block;
     width: 20px;
     height: 20px;
+    vertical-align: top;
     background-position: center center;
     background-size: 20px auto;
+    background-repeat: no-repeat;
     border-radius: 4px;
 }
-.topic-info .topic-meta .author-name {
+ul.topic-meta .author-name {
     display: inline;
 }
 
