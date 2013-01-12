@@ -1,3 +1,7 @@
+.hidden {
+    display: none;
+}
+
 /* Topic voting arrow CSS */
 .icon.up-arrow {
     display: inline-block;
@@ -62,7 +66,6 @@ ul.topic-meta .author-name {
 }
 
 .topic-info .description {
-    display: none;
     padding: 2px 4px;
     margin: 0;
     color: #444;

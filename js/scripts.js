@@ -19,11 +19,13 @@ $(function() {
         $.post(url);
     });
     
-    // show/hide topic description on hover
-    $('.topic').hover(function() {
-        $('.description', this).slideDown(200);
-    },function() {
-        $('.description', this).slideUp(200);        
+    // show/hide topic description toggle
+    $('.read-more-toggle').click(function(e) {
+        e.preventDefault();
+        
+        var $description = $(this).closest('.description');
+        
+        $('.short-description, .full-description', $description).toggle();
     });
     
     // log-in prompt popup

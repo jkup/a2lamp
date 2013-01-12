@@ -5,6 +5,7 @@ class Topics extends CI_Controller {
     public function index()
     {
         $this->load->model('topic_model');
+        $this->load->helper('text');
 
         $topics = $this->topic_model->get_topics();
         

@@ -42,7 +42,17 @@
                         </ul>
                         
                         <p class="description">
-                            <?= $topic->description ?>
+                            <? if ( strlen($topic->description) > 200 ) : ?>
+                                <span class="short-description">
+                                    <?= character_limiter($topic->description, 200, '&hellip;<a href="#" class="read-more-toggle">read more</a> <i class="icon-caret-down"></i>') ?>
+                                </span>
+                                <span class="full-description hidden">
+                                    <?= nl2br($topic->description) ?> 
+                                    <a href="#" class="read-more-toggle">collapse</a> <i class="icon-caret-up"></i>
+                                </span>
+                            <? else : ?>
+                                <?= nl2br($topic->description) ?>
+                            <? endif; ?>
                         </p>
                     </div>
                 </div>
