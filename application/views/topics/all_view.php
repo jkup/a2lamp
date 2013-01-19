@@ -33,10 +33,12 @@
                         <h3><?= anchor('topic/' . $topic->id, $topic->title) ?></h3>                    
                     
                         <ul class="inline-list topic-meta">
+                            <? if ( !empty($topic->author_photo) ) : ?>
                             <li>
                                 <div class="author-photo" style="background-image:url(<?= $topic->author_photo ?>)"></div>
                                 <?= anchor($topic->author_link, $topic->author_name, array( 'class' => 'author-name' )) ?>
                             </li>
+                            <? endif; ?>
                             <li><?= date('M. j, Y', strtotime($topic->created)) ?></li>
                             <li><?= $topic->votes ?> votes</li>
                         </ul>

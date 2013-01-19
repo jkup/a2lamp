@@ -7,9 +7,12 @@ class User_model extends CI_Model {
         $new_user = array(
             'id'    => $user->id,
             'link'  => $user->link,
-            'name'  => $user->name,
-            'photo' => $user->photo->thumb_link
+            'name'  => $user->name
         );
+        
+        if ( !empty($user->photo->thumb_link) ) {
+            $new_user['photo'] = $user->photo->thumb_link;
+        }
         
         $this->db->insert('users', $new_user);
         
