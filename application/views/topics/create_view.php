@@ -1,41 +1,72 @@
 <? $this->load->view('global/header_view'); ?>
 
-<div class="row">        
-    <? if ( $user ) : ?>
-        <div class="eight columns">
-            <form action="/topic/create" method="post">
-                <input type="hidden" name="user_id" value="<?= $user->id ?>">
-                
-                <label class="<?= ( form_error('title') ) ? "error" : '' ?>">Title</label>
-                <input
-                    type="text"
-                    name="title"
-                    placeholder="enter a topic title"
-                    value="<?= set_value('title') ?>"
-                    class="<?= ( form_error('title') ) ? "error" : '' ?>">
-                <?= form_error('title', '<small class="error">', '</small>') ?>
+<? if ( !empty($user->id) ) : ?>
+        <div class="row">
+           <div class="ten columns">
+               <h2>Submit a Topic</h2>
+           </div>
+        </div>
 
-                <label class="<?= ( form_error('description') ) ? "error" : '' ?>">Description</label>
-                <textarea
-                    name="description"
-                    placeholder="enter a description for this topic"
-                    class="<?= ( form_error('description') ) ? "error" : '' ?>"><?= set_value('description') ?></textarea>
-                <?= form_error('description', '<small class="error">', '</small>') ?>
+        <form action="/topic/create" method="post" class="create-topic">
+            <input type="hidden" name="user_id" value="<?= $user->id ?>">
 
-                <p>
+            <div class="row">
+                <div class="eight columns">
+                    <label class="<?= ( form_error('title') ) ? "error" : '' ?>">Title</label>
+                    <input
+                        type="text"
+                        name="title"
+                        placeholder="enter a topic title"
+                        value="<?= set_value('title') ?>"
+                        class="<?= ( form_error('title') ) ? "error" : '' ?>">
+                    <?= form_error('title', '<small class="error">', '</small>') ?>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="ten columns">
+                    <label class="<?= ( form_error('description') ) ? "error" : '' ?>">Description</label>
+                    <textarea
+                        name="description"
+                        placeholder="enter a description for this topic"
+                        rows="6"
+                        class="<?= ( form_error('description') ) ? "error" : '' ?>"><?= set_value('description') ?></textarea>
+                    <?= form_error('description', '<small class="error">', '</small>') ?>
+                </div>
+            </div>
+
+        <? if ( !empty($tags) ) : ?>
+            <div class="row">
+                <div class="tags ten columns">
+                    <label>Tags</label>
+
+                <? foreach ( $tags as $tag ) : ?>
+                    <input type="checkbox" class="hidden" name="tags[]" id="tag-<?= $tag->id ?>" value="<?= $tag->id ?>">
+                    <label class="tag" for="tag-<?= $tag->id ?>"><?= $tag->name ?></label>
+                <? endforeach; ?>
+                    
+                </div>
+            </div>
+        <? endif; ?>
+
+            <div class="row">
+                <div class="submit ten columns">
                     <input type="submit" class="button" name="submit" value="create topic">
                     <?= anchor('/topics', 'cancel') ?>
-                </p>
-            </form>
-        </div>
-    
-        <div class="four columns"></div>
-    <? else : ?>
-        <div class="twelve columns centered">
+                </div>
+            </div>
+        </form>
+    </div>
+
+<? else : ?>
+
+    <div class="row">
+        <div class="twelve columns">
             <h2>Access denied</h2>
             <h3 class="subheader">You must be logged in to create a topic.  <?= anchor('/login', 'Click here to login.') ?></h3>
         </div>
-    <? endif; ?>
-</div>
+    </div>
+
+<? endif; ?>
 
 <? $this->load->view('global/footer_view'); ?>

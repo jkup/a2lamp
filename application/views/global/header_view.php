@@ -11,7 +11,7 @@
         <link href="<?php echo base_url();?>css/styles.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <div class="row">
+        <div class="header row">
             <div class="twelve columns">
                 <nav class="top-bar">
                     <ul>

@@ -22,6 +22,7 @@ class Topic_model extends CI_Model {
 
         foreach ( $query->result() as $topic ) {
             $topic->user_voted = ( !empty($topic->user_voted) );
+            
             $topics[] = $topic;
         }
 
@@ -49,7 +50,16 @@ class Topic_model extends CI_Model {
 
     public function create_topic( $new_topic )
     {
+        $tags = $new_topic['tags'];
+        
+        unset($new_topic['tags']);
+        
         $this->db->insert('topics', $new_topic);
+        
+        if ( !empty($tags) ) {
+            $topic_id = $this->db->insert_id();
+            $this->add_topic_tags($topic_id, $tags);
+        }
 
         return $this->db->insert_id();
     }
@@ -75,6 +85,42 @@ class Topic_model extends CI_Model {
                 'topic_id' => $topic_id,
                 'user_id'  => $user->id
             ));
+        }
+    }
+
+    /**
+     * Returns list of predefined topic tags, in alpha order.
+     * @return array
+     */
+    public function get_tags()
+    {
+        $tags = array();
+        
+        $this->db->order_by('name', 'ASC');
+        
+        $query = $this->db->get('tags');
+        
+        foreach ( $query->result() as $tag ) {
+            $tags[] = $tag;
+        }
+        
+        return $tags;
+    }
+    
+    /**
+     * Adds tags to a given topic
+     * @param int $topic_id
+     * @param array $tags
+     */
+    public function add_topic_tags( $topic_id, $tags )
+    {
+        if ( !empty($tags) ) {
+            foreach ( $tags as $tag_id ) {
+                $this->db->insert('topic_tags', array(
+                    'topic_id' => $topic_id,
+                    'tag_id'   => $tag_id
+                ));
+            }
         }
     }
 

@@ -70,3 +70,26 @@ ul.topic-meta .author-name {
     margin: 0;
     color: #444;
 }
+
+.create-topic label {
+    margin-bottom: 10px;
+}
+.create-topic .tags {
+    padding-bottom: 15px;
+}
+    .create-topic .tag {
+        float: left;
+        padding: 4px 10px;
+        margin: 5px;
+        color: #bbb;
+        background-color: #eee;
+        border-radius: 10px;
+    }
+    .create-topic input:checked+.tag {
+        font-weight: 500;
+        color: white;
+        background-color: #196177;
+    }
+.create-topic .submit {
+    text-align: right;
+}
