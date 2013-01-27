@@ -25,7 +25,7 @@ class Topic_model extends CI_Model {
             
             $topics[] = $topic;
         }
-
+        
         return $topics;
     }
 
@@ -35,13 +35,17 @@ class Topic_model extends CI_Model {
         
         $user_id = ( $user ) ? $user->id : '0';
 
-        $this->db->select('topics.*, users.name AS `author_name`, users.photo AS `author_photo`, users.link AS `author_link`, COUNT(vote_count.user_id) AS `votes`');
+        $this->db->select('topics.*, users.name AS `author_name`, users.photo AS `author_photo`, users.link AS `author_link`, COUNT(vote_count.user_id) AS `votes`, GROUP_CONCAT(tags.name) AS `tags`');
         $this->db->join('users', 'topics.user_id = users.id');
         $this->db->join('votes AS vote_count', 'topics.id = vote_count.topic_id', 'left');
+        $this->db->join('topic_tags', 'topics.id = topic_tags.topic_id', 'left');
+        $this->db->join('tags', 'topic_tags.tag_id = tags.id', 'left');
 
         $query = $this->db->get_where('topics', array( 'topics.id' => $topic_id ), 1);
         
         $topic = $query->row();
+            
+        $topic->tags = ( !empty($topic->tags) ) ? explode(',', $topic->tags) : array();
         
         $topic->user_voted = ( !empty($topic->user_voted) );
 

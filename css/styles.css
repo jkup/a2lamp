@@ -71,6 +71,20 @@ ul.topic-meta .author-name {
     color: #444;
 }
 
+.topic #comments {
+    margin-top: 20px;
+}
+.topic .tag {
+    font-size: 0.8em;
+    padding: 0.333em 0.75em;
+    color: #bbb;
+    background-color: #eee;
+    border-radius: 10px;
+    font-weight: 500;
+    color: white;
+    background-color: #aaa;
+}
+
 .create-topic label {
     margin-bottom: 10px;
 }

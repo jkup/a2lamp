@@ -27,6 +27,16 @@
             <p><?= $topic->description ?></p>
         </div>
     </div>
+
+<? if ( !empty($topic->tags) ) : ?>
+    <div class="row">
+        <div class="tags twelve columns">  
+            <? foreach ( $topic->tags as $tag_name ) : ?>
+                <span class="tag"><?= $tag_name ?></span>
+            <? endforeach; ?>
+        </div>
+    </div>
+<? endif; ?>
     
     <div class="row" id="comments">
         <div class="twelve columns">
