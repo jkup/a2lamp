@@ -33,6 +33,7 @@
                                     <li><?= anchor('https://github.com/m1ck3y/a2lamp/issues', 'Report a bug / Request a feature'); ?></li>
                                 </ul>
                             </li>
+                            <li><?= anchor('http://www.meetup.com/ann-arbor-php-mysql/', 'Meetup Group'); ?></li>
                         </ul>
 
                         <ul class="right">
