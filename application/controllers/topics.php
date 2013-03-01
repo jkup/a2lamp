@@ -22,6 +22,26 @@ class Topics extends CI_Controller {
         $this->load->view('topics/all_view', $data);
     }
 
+    public function archive()
+    {
+        $this->load->model('topic_model');
+        $this->load->helper('text');
+
+        $topics = $this->topic_model->get_archived_topics();
+        
+        $page = array( 'title' => 'Past Topics' );
+        
+        $user = $this->session->userdata('user');
+
+        $data = array( 
+            'page'   => $page,
+            'topics' => $topics,
+            'user'   => $user
+        );
+
+        $this->load->view('topics/archive_view', $data);
+    }    
+
     public function create()
     {   
         $page = array( 'title' => 'Create A New Topic' );
