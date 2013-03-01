@@ -29,7 +29,12 @@
                         </a>
                     <? endif; ?>
                     
-                    <div class="topic-info">
+					<!-- If the user is Jon or Kelly or Dan -->
+					<? if ($user->id == '16778651' || $user->id == '15291061' || $user->id=='41799642') : ?>
+						<!-- Add button to allow archiving of topics -->
+					<? endif; ?>
+                   
+				   <div class="topic-info">
                         <h3><?= anchor('topic/' . $topic->id, $topic->title) ?></h3>                    
                     
                         <ul class="inline-list topic-meta">
