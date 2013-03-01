@@ -24,7 +24,13 @@
 
                     <section>
                         <ul class="left">
-                            <li><?= anchor('topics/', 'Current Topics') ?></li>
+                            <li class="has-dropdown">
+                                <?= anchor('topics/', 'Topics') ?>
+                                <ul class="dropdown">
+                                    <li><?= anchor('topics/', 'Current Topics'); ?></li>
+                                    <li><?= anchor('topics/archive/', 'Archived Topics'); ?></li>
+                                </ul>
+                            </li>
                             <li><?= anchor('blog/', 'Minutes From Past Meetups') ?></li>
                             <li class="has-dropdown">
                                 <?= anchor('https://github.com/m1ck3y/a2lamp', 'GitHub') ?>
