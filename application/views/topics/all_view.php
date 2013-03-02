@@ -30,8 +30,10 @@
                     <? endif; ?>
                     
 					<!-- If the user is Jon or Kelly or Dan -->
-					<? if ($user->id == '16778651' || $user->id == '15291061' || $user->id=='41799642') : ?>
-						<!-- Add button to allow archiving of topics -->
+					<? if ($user) : ?>
+						<? if($user->id == '16778651' || $user->id == '15291061' || $user->id=='41799642') : ?>
+							<? echo "Administrator"; ?>
+						<? endif; ?>
 					<? endif; ?>
                    
 				   <div class="topic-info">
