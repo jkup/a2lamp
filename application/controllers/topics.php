@@ -40,7 +40,16 @@ class Topics extends CI_Controller {
         );
 
         $this->load->view('topics/archive_view', $data);
-    }    
+    } 
+
+    public function add_to_archive()
+    { 
+        $topicID = $this->input->get('id');
+        $this->load->model('topic_model');
+        $this->topic_model->archive_topic($topicID);
+        
+        redirect('topics');
+    }
 
     public function create()
     {   

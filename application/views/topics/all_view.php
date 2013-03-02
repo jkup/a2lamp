@@ -29,10 +29,9 @@
                         </a>
                     <? endif; ?>
                     
-					<!-- If the user is Jon or Kelly or Dan -->
-					<? if ($user) : ?>
+					<?if ($user) : ?>
 						<? if($user->id == '16778651' || $user->id == '15291061' || $user->id=='41799642') : ?>
-							<? echo "Administrator"; ?>
+							<?= anchor('topics/add_to_archive?id='. $topic->id ,'Archive Topic',array( 'class' => 'small right' )) ?>
 						<? endif; ?>
 					<? endif; ?>
                    

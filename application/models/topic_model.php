@@ -95,6 +95,21 @@ class Topic_model extends CI_Model {
         return $this->db->insert_id();
     }
 
+     public function archive_topic( $id )
+    {
+        $user = $this->session->userdata('user');
+
+        if ( $user ) {
+            
+            $data = array(
+               'completed' => '1'
+            );
+
+            $this->db->where('id', $id);
+            $this->db->update('topics', $data); 
+        }
+    }
+
     public function add_vote( $topic_id )
     {
         $user = $this->session->userdata('user');
