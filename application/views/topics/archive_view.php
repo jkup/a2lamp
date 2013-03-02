@@ -65,7 +65,6 @@
     <div class="row">
         <div class="twelve columns">
             <h2>No topics found</h2>
-            <h3 class="subheader"><?= anchor('/topic/create', 'Click here') ?> to create a topic!</h3>
         </div>
     </div>
 <? endif; ?>
