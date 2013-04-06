@@ -31,7 +31,7 @@
                                     <li><?= anchor('topics/archive/', 'Archived Topics'); ?></li>
                                 </ul>
                             </li>
-                            <li><?= anchor('blog/', 'Minutes From Past Meetups') ?></li>
+                            <!--<li><?= //anchor('blog/', 'Minutes From Past Meetups') ?></li>
                             <li class="has-dropdown">
                                 <?= anchor('https://github.com/m1ck3y/a2lamp', 'GitHub') ?>
                                 <ul class="dropdown">
