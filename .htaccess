@@ -4,4 +4,6 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)$ /index.php?/$1 [L]
+	RewriteCond %{HTTP_HOST} ^a2lamp.com [NC]
+	RewriteRule ^(.*)$ http://www.a2lamp.com/$1 [L,R=301]
 </IfModule>
