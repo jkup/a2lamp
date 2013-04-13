@@ -5,10 +5,10 @@
             <?= ( isset($page['title']) ) ? $page['title'] . ' - ' : '' ?>A2Lamp
         </title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="<?php echo base_url();?>css/foundation.css" rel="stylesheet" type="text/css">
-        <link href="<?php echo base_url();?>css/jquery.qtip.min.css" rel="stylesheet" type="text/css">
-        <link href="<?php echo base_url();?>css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="<?php echo base_url();?>css/styles.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="<?= base_url();?>css/foundation.css">
+        <link rel="stylesheet" type="text/css" href="<?= base_url();?>css/jquery.qtip.min.css">
+        <link rel="stylesheet" type="text/css" href="<?= base_url();?>css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="<?= base_url();?>css/styles.css">
     </head>
     <body>
         <div class="header row">
@@ -37,6 +37,9 @@
                                     <li><?= anchor('https://github.com/m1ck3y/a2lamp', 'Repo for this site'); ?></li>
                                     <li><?= anchor('https://github.com/m1ck3y/a2lamp/issues', 'Report a bug / Request a feature'); ?></li>
                                 </ul>
+                            </li>
+                            <li>
+                                <?= anchor('http://www.meetup.com/ann-arbor-php-mysql/', 'Meetup Group') ?>
                             </li>
                         </ul>
 
