@@ -21,6 +21,19 @@
                         class="<?= ( form_error('title') ) ? "error" : '' ?>">
                     <?= form_error('title', '<small class="error">', '</small>') ?>
                 </div>
+				<div class="four columns" style="margin-top: 30px;">
+					Beginner
+					<input
+						type="radio"
+						name="level"
+						value="beginner"
+						checked="checked">
+					Advanced
+					<input
+						type="radio"
+						name="level"
+						value="advanced">
+				</div>
             </div>
 
             <div class="row">

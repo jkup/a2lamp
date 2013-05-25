@@ -80,6 +80,7 @@ class Topics extends CI_Controller {
                 'title'       => $this->input->post('title'),
                 'description' => $this->input->post('description'),
                 'user_id'     => $this->input->post('user_id'),
+				'level'       => $this->input->post('level'),
                 'tags'        => $this->input->post('tags')
             );
 
