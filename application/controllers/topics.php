@@ -7,7 +7,8 @@ class Topics extends CI_Controller {
         $this->load->model('topic_model');
         $this->load->helper('text');
 
-        $topics = $this->topic_model->get_topics();
+        $btopics = $this->topic_model->get_topics('beginner');
+        $atopics = $this->topic_model->get_topics('advanced');
         
         $page = array( 'title' => 'Current Topics' );
         
@@ -15,7 +16,8 @@ class Topics extends CI_Controller {
 
         $data = array( 
             'page'   => $page,
-            'topics' => $topics,
+            'btopics' => $btopics,
+            'atopics' => $atopics,
             'user'   => $user
         );
 

@@ -2,7 +2,7 @@
 
 class Topic_model extends CI_Model {
 
-    public function get_topics()
+    public function get_topics($level = 'beginner')
     {
         $topics = array();
         
@@ -18,7 +18,14 @@ class Topic_model extends CI_Model {
         $this->db->order_by('votes', 'DESC');
         $this->db->order_by('topics.created', 'DESC');
 
-        $query = $this->db->get_where('topics', array('completed' => '0'));
+        if($level == 'beginner')
+        {
+            $query = $this->db->get_where('topics', array('completed' => '0', 'level' => 'beginner'));
+        }
+        elseif($level == 'advanced')
+        {
+            $query = $this->db->get_where('topics', array('completed' => '0', 'level' => 'advanced'));
+        }
 
         foreach ( $query->result() as $topic ) {
             $topic->user_voted = ( !empty($topic->user_voted) );

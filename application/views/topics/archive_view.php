@@ -3,7 +3,7 @@
 <? if ( !empty($topics) ) : ?>
     <div class="row">
         <div class="ten columns">
-            <h2>Current Topics</h2>
+            <h2>Archived Topics</h2>
         </div>
         
         <div class="two columns">
@@ -15,20 +15,6 @@
         <div class="row">
             <div class="twelve columns">
                 <div class="topic">
-                    <? if ( isset($topic->user_voted) && $topic->user_voted === true ) : ?>
-                        <a href="#" class="remove-vote" data-topicid="<?= $topic->id ?>">
-                            <span class="icon up-arrow"></span>
-                        </a>
-                    <? elseif ( $user ) : ?>
-                        <a href="#" class="add-vote" data-topicid="<?= $topic->id ?>">
-                            <span class="icon up-arrow"></span>
-                        </a>
-                    <? else : ?>
-                        <a href="#" class="log-in-popup" title="Log in to vote up topics">
-                            <span class="icon up-arrow"></span>
-                        </a>
-                    <? endif; ?>
-                    
                     <div class="topic-info">
                         <h3><?= anchor('topic/' . $topic->id, $topic->title) ?></h3>                    
                     
@@ -40,7 +26,6 @@
                             </li>
                             <? endif; ?>
                             <li><?= date('M. j, Y', strtotime($topic->created)) ?></li>
-                            <li><?= $topic->votes ?> votes</li>
                         </ul>
                         
                         <p class="description">
