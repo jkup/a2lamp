@@ -11,35 +11,35 @@
         <div class="row">
             <div class="twelve columns">
                 <label>Job Title</label>
-                <input type="text" name="title" placeholder="job title" value="" required>
+                <input type="text" name="title" placeholder="enter the job title" value="" required>
             </div>
         </div>
 
         <div class="row">
             <div class="twelve columns">
                 <label>Location</label>
-                <input type="text" name="location" placeholder="job location" value="" required>
+                <input type="text" name="location" placeholder="enter the job location" value="" required>
             </div>
         </div>
 
         <div class="row">
             <div class="twelve columns">
                 <label>Company Name</label>
-                <input type="text" name="company" placeholder="company name" value="" required>
+                <input type="text" name="company" placeholder="enter thecompany name" value="" required>
             </div>
         </div>
 
         <div class="row">
             <div class="twelve columns">
                 <label>URL</label>
-                <input type="url" name="location" placeholder="link to job posting" value="" required>
+                <input type="url" name="location" placeholder="please provide a URL to the job posting" value="" required>
             </div>
         </div>
 
         <div class="row">
             <div class="twelve columns">
                 <label>Description</label>
-                <textarea name="description" placeholder="job description" rows="6"></textarea>
+                <textarea name="description" placeholder="enter a job description" rows="6" required></textarea>
             </div>
         </div>
 
