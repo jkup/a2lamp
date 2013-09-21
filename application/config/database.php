@@ -48,13 +48,13 @@
 $active_group = 'local';
 $active_record = TRUE;
 
-$db['local']['hostname'] = 'localhost';
+$db['local']['hostname'] = '127.0.0.1';
 $db['local']['username'] = 'root';
 $db['local']['password'] = 'root';
 $db['local']['database'] = 'a2lamp';
 $db['local']['dbdriver'] = 'mysql';
 $db['local']['dbprefix'] = '';
-$db['local']['pconnect'] = TRUE;
+$db['local']['pconnect'] = FALSE;
 $db['local']['db_debug'] = TRUE;
 $db['local']['cache_on'] = FALSE;
 $db['local']['cachedir'] = '';
@@ -63,6 +63,7 @@ $db['local']['dbcollat'] = 'utf8_general_ci';
 $db['local']['swap_pre'] = '';
 $db['local']['autoinit'] = TRUE;
 $db['local']['stricton'] = FALSE;
+$db['local']['port'] = '3306';
 
 
 /* End of file database.php */
