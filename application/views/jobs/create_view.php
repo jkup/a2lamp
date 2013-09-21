@@ -7,7 +7,7 @@
        </div>
     </div>
 
-    <form action="/job/create" method="post">
+    <form action="/jobs/create" method="post">
         <div class="row">
             <div class="twelve columns">
                 <label>Job Title</label>
@@ -45,8 +45,8 @@
 
         <div class="row">
             <div class="twelve columns">
-                <input type="submit" class="button" name="submit" value="create topic">
-                <?= anchor('/topics', 'cancel') ?>
+                <input type="submit" class="button" name="submit" value="create job">
+                <?= anchor('/jobs', 'cancel') ?>
             </div>
         </div>
     </form>
