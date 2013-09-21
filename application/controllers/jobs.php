@@ -5,6 +5,7 @@ class Jobs extends CI_Controller
 
     public function index()
     {
+        $user = $this->session->userdata('user');
 
         $data = array(
             'user' => $user
