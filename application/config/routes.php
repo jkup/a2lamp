@@ -47,6 +47,8 @@ $route['topic/(:any)/remove-vote'] = 'topics/remove_vote/$1';
 $route['topic/(:any)']             = 'topics/show/$1';
 $route['login']                    = 'user/login';
 $route['logout']                   = 'user/logout';
+$route['jobs']                     = 'jobs/index';
+$route['jobs/create']              = 'jobs/create';
 $route['jobs/(:any)']              = 'jobs/show/$1';
 
 

@@ -5,17 +5,34 @@ class Jobs extends CI_Controller
 
     public function index()
     {
-        $this->load->view( 'jobs/all_view' );
+
+        $data = array(
+            'user' => $user
+        );
+
+        $this->load->view( 'jobs/all_view', $data );
     }
 
     public function create()
     {
-        $this->load->view( 'jobs/create_view' );
+        $user = $this->session->userdata('user');
+
+        $data = array(
+            'user' => $user
+        );
+
+        $this->load->view( 'jobs/create_view', $data );
     }
 
     public function show( $job_id )
     {
-        $this->load->view( 'jobs/show_view' );
+        $user = $this->session->userdata('user');
+
+        $data = array(
+            'user' => $user
+        );
+
+        $this->load->view( 'jobs/show_view', $data );
     }
 
 }
