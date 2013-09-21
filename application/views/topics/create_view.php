@@ -2,7 +2,7 @@
 
 <? if ( !empty($user->id) ) : ?>
         <div class="row">
-           <div class="ten columns">
+           <div class="large-10 columns">
                <h2>Submit a Topic</h2>
            </div>
         </div>
@@ -11,7 +11,7 @@
             <input type="hidden" name="user_id" value="<?= $user->id ?>">
 
             <div class="row">
-                <div class="eight columns">
+                <div class="large-8 columns">
                     <label class="<?= ( form_error('title') ) ? "error" : '' ?>">Title</label>
                     <input
                         type="text"
@@ -21,7 +21,7 @@
                         class="<?= ( form_error('title') ) ? "error" : '' ?>">
                     <?= form_error('title', '<small class="error">', '</small>') ?>
                 </div>
-				<div class="four columns" style="margin-top: 30px;">
+				<div class="large-4 columns" style="margin-top: 30px;">
 					Beginner
 					<input
 						type="radio"
@@ -37,7 +37,7 @@
             </div>
 
             <div class="row">
-                <div class="ten columns">
+                <div class="large-10 columns">
                     <label class="<?= ( form_error('description') ) ? "error" : '' ?>">Description</label>
                     <textarea
                         name="description"
@@ -50,7 +50,7 @@
 
         <? if ( !empty($tags) ) : ?>
             <div class="row">
-                <div class="tags ten columns">
+                <div class="tags large-10 columns">
                     <label>Tags</label>
 
                 <? foreach ( $tags as $tag ) : ?>
@@ -63,7 +63,7 @@
         <? endif; ?>
 
             <div class="row">
-                <div class="submit ten columns">
+                <div class="submit large-10 columns">
                     <input type="submit" class="button" name="submit" value="create topic">
                     <?= anchor('/topics', 'cancel') ?>
                 </div>
@@ -74,7 +74,7 @@
 <? else : ?>
 
     <div class="row">
-        <div class="twelve columns">
+        <div class="large-12 columns">
             <h2>Access denied</h2>
             <h3 class="subheader">You must be logged in to create a topic.  <?= anchor('/login', 'Click here to login.') ?></h3>
         </div>

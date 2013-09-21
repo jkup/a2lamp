@@ -2,13 +2,13 @@
 
 <div class="topic">
     <div class="row">
-        <div class="twelve columns">
+        <div class="large-12 columns">
             <h2><?= $topic->title ?></h2>
         </div>
     </div>
 
     <div class="row">
-        <div class="twelve columns">
+        <div class="large-12 columns">
             <ul class="inline-list topic-meta">
                 <? if ( !empty($topic->author_photo) ) : ?>
                 <li>
@@ -23,14 +23,14 @@
     </div>
 
     <div class="row">
-        <div class="twelve columns">
+        <div class="large-12 columns">
             <p><?= $topic->description ?></p>
         </div>
     </div>
 
 <? if ( !empty($topic->tags) ) : ?>
     <div class="row">
-        <div class="tags twelve columns">  
+        <div class="tags large-12 columns">  
             <? foreach ( $topic->tags as $tag_name ) : ?>
                 <span class="tag"><?= $tag_name ?></span>
             <? endforeach; ?>
@@ -39,7 +39,7 @@
 <? endif; ?>
     
     <div class="row" id="comments">
-        <div class="twelve columns">
+        <div class="large-12 columns">
             <div id="disqus_thread"></div>
             <script type="text/javascript">
                 /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

@@ -2,18 +2,18 @@
 
 <? if ( !empty($topics) ) : ?>
     <div class="row">
-        <div class="ten columns">
+        <div class="large-10 columns">
             <h2>Archived Topics</h2>
         </div>
         
-        <div class="two columns">
+        <div class="large-2 columns">
             <?= anchor('topics/create', 'Submit a topic', array( 'class' => 'small button' )) ?>
         </div>
     </div>
 
     <? foreach ( $topics as $topic ) : ?>
         <div class="row">
-            <div class="twelve columns">
+            <div class="large-12 columns">
                 <div class="topic">
                     <div class="topic-info">
                         <h3><?= anchor('topic/' . $topic->id, $topic->title) ?></h3>                    
@@ -48,7 +48,7 @@
     <? endforeach; ?>
 <? else : ?>
     <div class="row">
-        <div class="twelve columns">
+        <div class="large-12 columns">
             <h2>No topics found</h2>
         </div>
     </div>

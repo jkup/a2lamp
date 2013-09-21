@@ -43,5 +43,7 @@ $(function() {
             classes: 'qtip-youtube'
         }
     });
+
+    $( document ).foundation();
     
 });

@@ -1,11 +1,11 @@
 <? $this->load->view('global/header_view'); ?>
 <div class="row">
-	<div class="twelve columns centered">
+	<div class="large-12 columns centered">
 		<?php echo anchor("blog/create", "Create Post", 'class="button"'); ?>
 	</div>
 </div>
 <div class="row">
-	<div class="twelve columns centered"> 
+	<div class="large-12 columns centered"> 
 		<?php
 			foreach($posts as $post)
 			{

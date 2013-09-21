@@ -2,12 +2,12 @@
 
 <? if ( !empty($btopics) ) : ?>
     <div class="row">        
-        <div class="two columns">
+        <div class="large-2 columns">
             <?= anchor('topics/create', 'Submit a topic', array( 'class' => 'small button' )) ?>
         </div>
     </div>
     <div class="row">
-        <div class="six columns">
+        <div class="large-6 columns">
             <h3 class="subheader">Beginner Topics</h3>
             <? foreach ( $btopics as $topic ) : ?>
                 <div class="topic">
@@ -63,7 +63,7 @@
                 </div>
             <? endforeach; ?>
         </div>
-        <div class="six columns">
+        <div class="large-6 columns">
             <h3 class="subheader">Advanced Topics</h3>
                 <? foreach ( $atopics as $topic ) : ?>
                     <div class="topic">
@@ -122,7 +122,7 @@
         </div>
 <? else : ?>
     <div class="row">
-        <div class="twelve columns">
+        <div class="large-12 columns">
             <h2>No topics found</h2>
             <h3 class="subheader"><?= anchor('/topic/create', 'Click here') ?> to create a topic!</h3>
         </div>
