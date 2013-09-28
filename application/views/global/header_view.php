@@ -17,8 +17,7 @@
                     <li class="name">
                         <h1><a href="/">A2Lamp</a></h1>
                     </li>
-                    <li class="divider"></li>
-                    <li class="toggle-topbar"><a href="#"></a></li>
+                    <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
                 </ul>
 
                 <section class="top-bar-section">
@@ -59,6 +58,8 @@
                             </ul>
                         </li>
                     <? endif; ?>
+
+                        <li class="toggle-topbar menu-icon"></li>
                     </ul>
 
                 </section>
