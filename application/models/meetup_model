@@ -1,0 +1,11 @@
+<?php
+
+class Meetup_model extends CI_Model {
+
+    public function get_upcoming_meetup()
+    {
+
+    }
+
+}
+
