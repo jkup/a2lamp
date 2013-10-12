@@ -32,7 +32,7 @@
         <div class="row">
             <div class="twelve columns">
                 <label>URL</label>
-                <input type="url" name="location" placeholder="please provide a URL to the job posting" value="" required>
+                <input type="url" name="url" placeholder="please provide a URL to the job posting" value="" required>
             </div>
         </div>
 
@@ -45,7 +45,7 @@
 
         <div class="row">
             <div class="twelve columns">
-                <input type="submit" class="button" name="submit" value="create job">
+                <input type="submit" class="button" value="create job">
                 <?= anchor('/jobs', 'cancel') ?>
             </div>
         </div>

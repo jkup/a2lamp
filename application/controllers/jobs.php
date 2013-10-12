@@ -22,7 +22,24 @@ class Jobs extends CI_Controller
             'user' => $user
         );
 
-        $this->load->view( 'jobs/create_view', $data );
+        $job_data = $this->input->post();
+
+        if ( ! empty($job_data) && is_array($job_data) ) {
+            // load the job model
+            $this->load->model('job_model');
+
+            // attempt to add the job to the DB
+            $result = $this->job_model->add_job($job_data);
+
+            // did it work?
+            if ( $result === true ) {
+                echo('Job posted successfully!');
+            } else {
+                echo('There was an error posting your job.  Sorry about that... :/');
+            }
+        } else {
+            $this->load->view( 'jobs/create_view', $data );
+        }
     }
 
     public function show( $job_id )
