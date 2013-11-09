@@ -6,9 +6,15 @@ class Jobs extends CI_Controller
     public function index()
     {
         $user = $this->session->userdata('user');
+            
+        // load the job model
+        $this->load->model('job_model');
+
+        $jobs = $this->job_model->get_jobs();
 
         $data = array(
-            'user' => $user
+            'user' => $user,
+            'jobs' => $jobs
         );
 
         $this->load->view( 'jobs/all_view', $data );

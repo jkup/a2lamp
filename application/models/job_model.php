@@ -7,4 +7,18 @@ class Job_model extends CI_Model {
 		return $this->db->insert('jobs', $job_data);
 	}
 
+	public function get_jobs()
+	{
+		$query = $this->db->get('jobs');
+
+		$jobs = array();
+
+		foreach ($query->result() as $job)
+		{
+			$jobs[] = $job;
+		}
+
+		return $jobs;
+	}
+
 }
