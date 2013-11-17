@@ -42,6 +42,10 @@
                         <li>
                             <?= anchor('http://www.meetup.com/ann-arbor-php-mysql/', 'Meetup Group') ?>
                         </li>
+                        <li class="divider"></li>
+                        <li>
+                            <?= anchor('resources/', 'Resources') ?>
+                        </li>
                     </ul>
 
                     <ul class="right">

@@ -1,7 +1,7 @@
 <? $this->load->view('global/header_view'); ?>
 
 <? if ( !empty($btopics) ) : ?>
-    <div class="row">        
+    <div class="row">
         <div class="large-2 columns">
             <?= anchor('topics/create', 'Submit a topic', array( 'class' => 'small button' )) ?>
         </div>
@@ -24,16 +24,16 @@
                             <span class="icon up-arrow"></span>
                         </a>
                     <? endif; ?>
-                    
+
         			<?if ($user) : ?>
         				<? if($user->id == '16778651' || $user->id == '15291061' || $user->id=='41799642') : ?>
         					<?= anchor('topics/add_to_archive?id='. $topic->id ,'Archive Topic',array( 'class' => 'small right' )) ?>
         				<? endif; ?>
         			<? endif; ?>
-                   
+
         		   <div class="topic-info">
-                        <h3><?= anchor('topic/' . $topic->id, $topic->title) ?></h3>                    
-                    
+                        <h3><?= anchor('topic/' . $topic->id, $topic->title) ?></h3>
+
                         <ul class="inline-list topic-meta">
                             <? if ( !empty($topic->author_photo) ) : ?>
                             <li>
@@ -45,14 +45,14 @@
                             <li><?= $topic->votes ?> votes</li>
                             <li><?= $topic->level ?> level topic</li>
                         </ul>
-                        
+
                         <p class="description">
                             <? if ( strlen($topic->description) > 200 ) : ?>
                                 <span class="short-description">
                                     <?= character_limiter($topic->description, 200, '&hellip;<a href="#" class="read-more-toggle">read more</a> <i class="icon-caret-down"></i>') ?>
                                 </span>
                                 <span class="full-description hidden">
-                                    <?= nl2br($topic->description) ?> 
+                                    <?= nl2br($topic->description) ?>
                                     <a href="#" class="read-more-toggle">collapse</a> <i class="icon-caret-up"></i>
                                 </span>
                             <? else : ?>
@@ -80,16 +80,16 @@
                                 <span class="icon up-arrow"></span>
                             </a>
                         <? endif; ?>
-                        
+
                         <?if ($user) : ?>
                             <? if($user->id == '16778651' || $user->id == '15291061' || $user->id=='41799642') : ?>
                                 <?= anchor('topics/add_to_archive?id='. $topic->id ,'Archive Topic',array( 'class' => 'small right' )) ?>
                             <? endif; ?>
                         <? endif; ?>
-                       
+
                        <div class="topic-info">
-                            <h3><?= anchor('topic/' . $topic->id, $topic->title) ?></h3>                    
-                        
+                            <h3><?= anchor('topic/' . $topic->id, $topic->title) ?></h3>
+
                             <ul class="inline-list topic-meta">
                                 <? if ( !empty($topic->author_photo) ) : ?>
                                 <li>
@@ -101,14 +101,14 @@
                                 <li><?= $topic->votes ?> votes</li>
                                 <li><?= $topic->level ?> level topic</li>
                             </ul>
-                            
+
                             <p class="description">
                                 <? if ( strlen($topic->description) > 200 ) : ?>
                                     <span class="short-description">
                                         <?= character_limiter($topic->description, 200, '&hellip;<a href="#" class="read-more-toggle">read more</a> <i class="icon-caret-down"></i>') ?>
                                     </span>
                                     <span class="full-description hidden">
-                                        <?= nl2br($topic->description) ?> 
+                                        <?= nl2br($topic->description) ?>
                                         <a href="#" class="read-more-toggle">collapse</a> <i class="icon-caret-up"></i>
                                     </span>
                                 <? else : ?>

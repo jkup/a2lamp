@@ -6,7 +6,7 @@ class Jobs extends CI_Controller
     public function index()
     {
         $user = $this->session->userdata('user');
-            
+
         // load the job model
         $this->load->model('job_model');
 

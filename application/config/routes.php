@@ -50,6 +50,7 @@ $route['logout']                   = 'user/logout';
 $route['jobs']                     = 'jobs/index';
 $route['jobs/create']              = 'jobs/create';
 $route['jobs/(:any)']              = 'jobs/show/$1';
+$route['resources']                = 'resources/index';
 
 
 /* End of file routes.php */

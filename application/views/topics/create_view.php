@@ -57,7 +57,7 @@
                     <input type="checkbox" class="hidden" name="tags[]" id="tag-<?= $tag->id ?>" value="<?= $tag->id ?>">
                     <label class="tag" for="tag-<?= $tag->id ?>"><?= $tag->name ?></label>
                 <? endforeach; ?>
-                    
+
                 </div>
             </div>
         <? endif; ?>

@@ -30,14 +30,14 @@
 
 <? if ( !empty($topic->tags) ) : ?>
     <div class="row">
-        <div class="tags large-12 columns">  
+        <div class="tags large-12 columns">
             <? foreach ( $topic->tags as $tag_name ) : ?>
                 <span class="tag"><?= $tag_name ?></span>
             <? endforeach; ?>
         </div>
     </div>
 <? endif; ?>
-    
+
     <div class="row" id="comments">
         <div class="large-12 columns">
             <div id="disqus_thread"></div>
