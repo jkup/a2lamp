@@ -21,13 +21,16 @@
                 </ul>
                 <li><h2>Version Control ( we use git )</h2></li>
                 <ul>
-                    <li><a href="http://git-scm.com/">Git</a></li>
+                    <li><a href="http://git-scm.com/">Git</a>
+                        <ul>
+                            <li><a href="http://rogerdudler.github.io/git-guide/">Git - the simple guide</a></li>
+                            <li><a href="https://www.codeschool.com/courses/try-git">Free git video series</a></li>
+                            <li><a href="https://github.com/">Github</a></li>
+                            <li><a href="http://stackoverflow.com/questions/11816424/understanding-the-basics-of-git-and-github">Git vs. Github</a></li>
+                        </ul>
+                    </li>
                     <li><a href="http://subversion.apache.org/">Subversion</a></li>
                     <li><a href="http://mercurial.selenic.com/">Mercurial</a></li>
-                    <li><a href="http://rogerdudler.github.io/git-guide/">Git - the simple guide</a></li>
-                    <li><a href="https://www.codeschool.com/courses/try-git">Free git video series</a></li>
-                    <li><a href="https://github.com/">Github</a></li>
-                    <li><a href="http://stackoverflow.com/questions/11816424/understanding-the-basics-of-git-and-github">Git vs. Github</a></li>
                 </ul>
                 <li><h2>Development Environments</h2></li>
                 <ul>
