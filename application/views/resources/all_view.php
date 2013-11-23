@@ -65,6 +65,12 @@
                     </ul>
                 </li>
                 <li>
+                    <h2>PHP Tools</h2>
+                    <ul>
+                        <li><a href="http://getcomposer.org/">Composer</a></li>
+                        <li><a href="https://packagist.org/">Packagist</a></li>
+                    </ul>
+                <li>
                     <h2>Working with MySQL</h2>
                     <ul>
                         <li><a href="http://www.phpmyadmin.net">PHPMyAdmin</a></li>
