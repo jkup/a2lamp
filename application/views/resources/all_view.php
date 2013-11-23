@@ -69,6 +69,7 @@
                     <ul>
                         <li><a href="http://getcomposer.org/">Composer</a></li>
                         <li><a href="https://packagist.org/">Packagist</a></li>
+                        <li><a href="https://github.com/Luracast/Restler">Restler</a></li>
                     </ul>
                 <li>
                     <h2>Working with MySQL</h2>
